@@ -171,6 +171,9 @@ func main() {
 	case "http":
 		if len(userpass) == 2 {
 			user, pass := userpass[0], userpass[1]
+			if user == "" || pass == "" {
+				log.Fatal("User or password not provided!")
+			}
 			hdlr = httpauth.SimpleBasicAuth(user, pass)(hdlr)
 		}
 	case "openid":

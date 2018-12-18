@@ -5,6 +5,10 @@ RUN go get -v
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-X main.VERSION=docker' -o gohttpserver
 
 FROM debian:stretch
+ARG USERNAME
+ARG PASSWORD
+ENV USERNAME=$USERNAME \
+    PASSWORD=$PASSWORD
 RUN useradd -d /data -m -u 1000 -U upload
 RUN apt-get update && apt-get install -y ca-certificates
 USER upload
@@ -13,4 +17,4 @@ WORKDIR /app
 ADD assets ./assets
 COPY --from=builder /go/src/github.com/Aracki/fus .
 EXPOSE 8000
-ENTRYPOINT [ "/app/gohttpserver", "--root=/data"  ]
+ENTRYPOINT /app/gohttpserver --root=/data --upload --delete --auth-type http --auth-http $USERNAME:$PASSWORD

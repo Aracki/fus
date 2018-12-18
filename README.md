@@ -8,8 +8,8 @@
 
 # Install:
 1. `go build`
-2. `docker build -t fus .`
-3. `docker run -it --rm -p 8000:8000 --name fus fus --auth-type http --auth-http user:passw0rd --delete --upload`
+2. `docker build -t fus . --build-arg USERNAME=aracki --build-arg PASSWORD=passw0rd`
+3. `docker run -it --rm -p 8000:8000 --name fus fus`
 
 # Build image for production:
 `docker build -t fus_prod -f Dockerfile_prod .`
