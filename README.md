@@ -7,9 +7,12 @@
 - Features: Human-friendly UI, file uploading support, direct QR-code generation for Apple & Android install package.
 
 # Install:
-`go build`
-`docker build -t fus .`
-`docker run -it --rm -p 8000:8000 --name fus fus --auth-type http --auth-http user:passw0rd --delete --upload`
+1. `go build`
+2. `docker build -t fus .`
+3. `docker run -it --rm -p 8000:8000 --name fus fus --auth-type http --auth-http user:passw0rd --delete --upload`
+
+# Build image for production:
+`docker build -t fus_prod -f Dockerfile_prod .`
 
 ## Requirements
 Tested with go-1.10, go-1.11
