@@ -172,7 +172,7 @@ func main() {
 		if len(userpass) == 2 {
 			user, pass := userpass[0], userpass[1]
 			if user == "" || pass == "" {
-				log.Fatal("User or password not provided!")
+				log.Println("User or password not provided!")
 			}
 			hdlr = httpauth.SimpleBasicAuth(user, pass)(hdlr)
 		}
@@ -199,6 +199,7 @@ func main() {
 		})
 		w.Write(data)
 	})
+	http.Handle("/health", http.HandlerFunc(healthHandler))
 
 	if gcfg.Addr == "" {
 		gcfg.Addr = fmt.Sprintf(":%d", gcfg.Port)
@@ -216,4 +217,9 @@ func main() {
 		err = http.ListenAndServe(gcfg.Addr, nil)
 	}
 	log.Fatal(err)
+}
+
+func healthHandler(w http.ResponseWriter, r *http.Request)  {
+
+	w.Write([]byte("ok"))
 }
