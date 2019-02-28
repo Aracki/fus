@@ -1,5 +1,8 @@
 # gohttpserver
 
+![Travis (.org)](https://img.shields.io/travis/Aracki/fus.svg)
+[![](https://images.microbadger.com/badges/image/aracki/fus.svg)](https://microbadger.com/images/aracki/fus "Get your own image badge on microbadger.com")
+
 - Copy of [codeskyblue/gohttpserver](https://github.com/codeskyblue/gohttpserver/)
 - Goal: Make the best HTTP File Server.
 - Features: Human-friendly UI, file uploading support, direct QR-code generation for Apple & Android install package.
