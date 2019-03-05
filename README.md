@@ -1,6 +1,6 @@
-# gohttpserver
+# fus
 
-![Travis (.org)](https://img.shields.io/travis/Aracki/fus.svg)
+[![Build Status](https://travis-ci.org/Aracki/fus.svg?branch=master)](https://travis-ci.org/Aracki/fus)
 [![](https://images.microbadger.com/badges/image/aracki/fus.svg)](https://microbadger.com/images/aracki/fus "Get your own image badge on microbadger.com")
 
 - Fork of [codeskyblue/gohttpserver](https://github.com/codeskyblue/gohttpserver/)
